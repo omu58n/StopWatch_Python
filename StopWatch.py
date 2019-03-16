@@ -31,10 +31,10 @@ class StopWatch(tk.Frame):
 
         self.ListFrame = tk.Frame(self)
         self.ListFrame.pack()
-        self.scrollbar = tk.Scrollbar(self.ListFrame,orient=tk.VERTICAL)
-        self.scrollbar.pack(side=tk.RIGHT, fill="y")
         self.ListBox1 = tk.Listbox(self.ListFrame,width=55, height=14)
         self.ListBox1.pack(side=tk.LEFT, padx=(20, 0), pady=(10, 10))
+        self.scrollbar = tk.Scrollbar(self.ListFrame,command=self.ListBox1.yview)
+        self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.ListBox1["yscrollcommand"] = self.scrollbar.set
 
     def start(self):
